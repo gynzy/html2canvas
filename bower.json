@@ -1,5 +1,5 @@
 {
-    "name": "html2canvas",
+    "name": "gynzy-html2canvas",
     "description": "Screenshots with JavaScript",
     "main": "dist/html2canvas.js",
     "ignore": [
