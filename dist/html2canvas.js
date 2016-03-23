@@ -3671,7 +3671,8 @@ function isPseudoElement(container) {
 }
 
 function isTextNode(container) {
-    return container.node.nodeType === Node.TEXT_NODE;
+    var parentElement = container.node.parentElement;
+    return container.node.nodeType === Node.TEXT_NODE && !(parentElement.ownerSVGElement || parentElement.tagName.toLowerCase() === "svg");
 }
 
 function zIndexSort(contexts) {
@@ -4344,7 +4345,7 @@ function SVGNodeContainer(node, _native) {
         self.image = new Image();
         self.image.onload = resolve;
         self.image.onerror = reject;
-        self.image.src = "data:image/svg+xml," + (new XMLSerializer()).serializeToString(node);
+        self.image.src = "data:image/svg+xml," + encodeURIComponent(new XMLSerializer().serializeToString(node));
         if (self.image.complete === true) {
             resolve(self.image);
         }
