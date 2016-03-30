@@ -795,7 +795,7 @@ function isPseudoElement(container) {
 }
 
 function isTextNode(container) {
-    var parentElement = container.node.parentElement;
+    var parentElement = container.node.parentElement || container.node.parentNode;
     return container.node.nodeType === Node.TEXT_NODE && !(parentElement.ownerSVGElement || parentElement.tagName.toLowerCase() === "svg");
 }
 
