@@ -9,7 +9,7 @@ function ProxyImageContainer(src, proxy) {
     this.image = new Image();
     var self = this;
     this.promise = new Promise(function(resolve, reject) {
-        self.image.crossOrigin = "Anonymous";
+        self.image.crossOrigin = "anonymous";
         self.image.onload = resolve;
         self.image.onerror = reject;
 
