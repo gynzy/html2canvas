@@ -119,7 +119,7 @@
   };
 
   /**
-   * Creates an anonymous function which calls fn with arguments.
+   * Creates an Anonymous function which calls fn with arguments.
    *
    * @api public
    */
