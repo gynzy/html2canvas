@@ -38,7 +38,6 @@ function ImageContainer(src, cors) {
 		self.image.onerror = reject;
 
 		if (cors) {
-			self.image.crossorigin = "anonymous";
 			self.getSrc().then(function(imgSrc) {
 				self.image.src = imgSrc;
 				if (self.image.complete === true) {

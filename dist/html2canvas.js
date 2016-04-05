@@ -2341,7 +2341,7 @@ function ImageContainer(src, cors) {
 				}
 			};
 
-            xhr.onerror = rejectSrc;
+			xhr.onerror = rejectSrc;
 			xhr.send();
 		});
 	};
@@ -2351,15 +2351,14 @@ function ImageContainer(src, cors) {
 		self.image.onerror = reject;
 
 		if (cors) {
-			self.image.crossorigin = "anonymous";
 			self.getSrc().then(function(imgSrc) {
 				self.image.src = imgSrc;
-                if (self.image.complete === true) {
-    				resolve(self.image);
-    			}
+				if (self.image.complete === true) {
+					resolve(self.image);
+				}
 			}, function(err) {
-                reject(err);
-            });
+				reject(err);
+			});
 		} else {
 			self.image.src = src;
 			if (self.image.complete === true) {
